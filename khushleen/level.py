@@ -47,7 +47,6 @@ class Level:
                         if style == "object":
                             surf = graphics["object"][int(col)]
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], "object", surf)
-
         
         self.player = Player((2000, 1500), [self.visible_sprites], self.obstacle_sprites)
 
@@ -71,10 +70,6 @@ class YSortCameraGroup(pygame.sprite.Group):
         # creating the floor
         self.floor_surf = pygame.image.load('graphics/tilemap/ground.png').convert()
         self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
-
-        
-
-
 
     def custom_draw(self, player):
 

@@ -13,7 +13,6 @@ def import_csv_layout(path):
 
         return terrain_map
 
-
 def import_folder(path):
     surface_list = []
 
