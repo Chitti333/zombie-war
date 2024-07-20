@@ -25,7 +25,7 @@ class UI:
         for magic in magic_info.values():
             path = magic['graphic']
             magic = pygame.image.load(path).convert_alpha()
-            self.magic_graphics.append(weapon)
+            self.magic_graphics.append(magic)
 
 
 
