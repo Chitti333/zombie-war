@@ -115,13 +115,12 @@ class Player(Entity):
                 self.can_switch_magic = False
                 self.magic_switch_time = pygame.time.get_ticks()
 
-                if self.magic_index < len(magic_info.keys()) - 1:
-                    self.magic_index += 1
+                if self.magic_index == 0:
+                    self.magic_index = 1
                     self.magic = list(magic_info.keys())[self.magic_index]
                 else:
-                    self.magic_index = 0
+                    self.magic_index = 1
                     self.magic = list(magic_info.keys())[self.magic_index]
-                print("magic")
 
     def get_status(self):
 
@@ -185,9 +184,21 @@ class Player(Entity):
         weapon_damage = weapon_data[self.weapon]['damage']
         return base_damage + weapon_damage
 
+    def get_full_magic_damage(self):
+        base_damage = self.stats['magic']
+        spell_damage = magic_info[self.magic]['strength']
+        return base_damage + spell_damage
+
+    def energy_recovery(self):
+        if self.energy < self.stats['energy']:
+            self.energy += 0.01 * self.stats['magic']
+        else:
+            self.energy = self.stats['energy']
+
     def update(self):
         self.input()
         self.cooldowns()
         self.move(self.speed)
         self.get_status()
         self.animate()
+        self.energy_recovery()

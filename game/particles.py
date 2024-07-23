@@ -14,7 +14,7 @@ class animationPlayer:
 
 
         #magic
-        "flame" : import_folder("graphics/particles/flame/flames"),
+        "flame" : import_folder("graphics/particles/flame/frames"),
         "aura" : import_folder("graphics/particles/aura"),
         "heal" : import_folder("graphics/particles/heal/frames"),
 
@@ -40,16 +40,12 @@ class animationPlayer:
             self.reflect_images(import_folder("graphics/particles/leaf5")),
             self.reflect_images(import_folder("graphics/particles/leaf6"))
             )
-
     }
-        
-    
+           
     def reflect_images(self, frames):
         new_frames = list()
         for frame in frames:
             new_frames.append(pygame.transform.flip(frame, True, False))
-
-        
         return new_frames
     
     def create_grass_particles(self, pos, groups):
@@ -60,12 +56,10 @@ class animationPlayer:
         animation_frames = self.frames[animation_type]
         ParticleEffect(pos, animation_frames, groups)
 
-
-
 class ParticleEffect(pygame.sprite.Sprite):
     def __init__(self, position, animation_frames, groups):
         super().__init__(groups)
-
+        self.sprite_type = 'magic'
         self.frame_index = 0
         self.animation_speed = 0.15
         self.frames = animation_frames
