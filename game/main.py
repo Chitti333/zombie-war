@@ -8,7 +8,7 @@ class Game:
         #general setup
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-        pygame.display.set_caption('ZOMBIE GAME')
+        pygame.display.set_caption('ZOMBIE WAR')
         self.clock = pygame.time.Clock()
         self.level = Level()
 
@@ -18,6 +18,9 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_m:
+                        self.level.toggle_menu()
 
             self.screen.fill('black')
             self.level.run()
