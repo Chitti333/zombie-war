@@ -117,12 +117,12 @@ class Player(Entity):
                 self.can_switch_magic = False
                 self.magic_switch_time = pygame.time.get_ticks()
 
-                if self.magic_index == 0:
-                    self.magic_index = 1
-                    self.magic = list(magic_info.keys())[self.magic_index]
+                if self.magic_index < len(list(magic_info.keys())) - 1:
+                    self.magic_index += 1
                 else:
-                    self.magic_index = 1
-                    self.magic = list(magic_info.keys())[self.magic_index]
+                    self.magic_index = 0
+                self.magic = list(magic_info.keys())[self.magic_index]
+                    
 
     def get_status(self):
 
