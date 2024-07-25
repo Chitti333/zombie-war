@@ -45,6 +45,7 @@ class Player(Entity):
         self.energy = self.stats['energy'] * 0.8
         self.exp = 5000
         self.speed = self.stats['speed']
+        self.is_alive = True 
 
         # damage timer
         self.vulnerable = True
@@ -123,7 +124,6 @@ class Player(Entity):
                     self.magic_index = 0
                 self.magic = list(magic_info.keys())[self.magic_index]
                     
-
     def get_status(self):
 
         #idle status 
@@ -197,12 +197,15 @@ class Player(Entity):
     def get_cost_by_index(self, index):
          return list(self.upgrade_cost.values())[index]
 
-
     def energy_recovery(self):
         if self.energy < self.stats['energy']:
             self.energy += 0.01 * self.stats['magic']
         else:
             self.energy = self.stats['energy']
+
+    def player_die(self):
+        if self.health <= 0:
+            self.is_alive = False
 
     def update(self):
         self.input()
@@ -211,3 +214,4 @@ class Player(Entity):
         self.get_status()
         self.animate()
         self.energy_recovery()
+        self.player_die()

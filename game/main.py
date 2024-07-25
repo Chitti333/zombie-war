@@ -15,7 +15,6 @@ class Game:
         self.state = "menu"
         self.level = Level()
 
-
         self.background_image = pygame.image.load("graphics/menu/start_menu.jpg").convert()
         self.background_image = pygame.transform.scale(self.background_image, (WIDTH, HEIGHT))
     
@@ -64,7 +63,6 @@ class Game:
             pygame.display.update()
             self.clock.tick(FPS)
     
-
     def how_to_play(self):
         while self.state == 'how_to_play':
             self.how_to_play_background_image = pygame.image.load("graphics/menu/how_to_play_bg.jpg").convert()
@@ -87,14 +85,6 @@ class Game:
             
             pygame.display.update()
             self.clock.tick(FPS)
-
-
-
-            
-
-
-
-
 
     def run(self):
         while True:
