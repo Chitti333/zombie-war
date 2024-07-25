@@ -23,7 +23,6 @@ class Upgrade:
        self.selection_time = None
        self.can_move = True
        
-
     def input(self):
         keys = pygame.key.get_pressed()
         if self.can_move:
@@ -40,6 +39,7 @@ class Upgrade:
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
                 self.item_list[self.selection_index].trigger(self.player)
+    
     def selection_cooldown(self):
         if not self.can_move:
             current_time = pygame.time.get_ticks()

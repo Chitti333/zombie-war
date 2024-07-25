@@ -135,16 +135,24 @@ class Level:
             self.player.vulnerable = False
             self.player.hurt_time = pygame.time.get_ticks()
             self.animation_player.create_particles(attack_type, self.player.rect.center, [self.visible_sprites])
+        if not self.player.is_alive:
+                    game_over = pygame.image.load("graphics/apple/game over.png").convert()
+                    game_over = pygame.transform.scale(game_over, (WIDTH, HEIGHT))
+                    self.display_surface.blit(game_over, (0,0))
+                    self.player.kill()
+                    font = pygame.font.Font(UI_FONT, UI_FONT_SIZE * 2)
+                    textobj = font.render("GAME OVER", True, "white")
+                    textrect = textobj.get_rect()
+                    textrect.center = (WIDTH // 2, HEIGHT // 2)
+                    self.display_surface.blit(textobj, textrect)
     
     def trigger_death_particles(self, pos, particle_type):
         self.animation_player.create_particles(particle_type, pos, self.visible_sprites)
 
     def add_exp(self, amount):
-
         self.player.exp += amount
 
     def toggle_menu(self):
-
         self.game_paused = not self.game_paused
 
     def run(self):
