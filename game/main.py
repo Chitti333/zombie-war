@@ -16,10 +16,10 @@ class Game:
         self.state = "menu"
         self.level = Level()
 
-        #sound
-        main_sound = pygame.mixer.Sound('audio\main.ogg')
-        main_sound.play(loops = -1)
-        main_sound.set_volume(0.2)
+        # #sound
+        # main_sound = pygame.mixer.Sound('audio\main.ogg')
+        # main_sound.play(loops = -1)
+        # main_sound.set_volume(0.1)
 
         self.background_image = pygame.image.load("graphics/menu/start_menu.jpg").convert()
         self.background_image = pygame.transform.scale(self.background_image, (WIDTH, HEIGHT))
