@@ -150,9 +150,11 @@ class Level:
         self.animation_player.create_particles(particle_type, pos, self.visible_sprites)
 
     def add_exp(self, amount):
+
         self.player.exp += amount
 
     def toggle_menu(self):
+
         self.game_paused = not self.game_paused
 
     def run(self):

@@ -7,6 +7,7 @@ class Game:
 
         #general setup
         pygame.init()
+        pygame.mixer.init() 
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption('ZOMBIE WAR')
         self.clock = pygame.time.Clock()
@@ -14,6 +15,10 @@ class Game:
         self.heading_font = pygame.font.Font(UI_FONT, UI_FONT_SIZE * 2)
         self.state = "menu"
         self.level = Level()
+
+        #sound
+        main_sound = pygame.mixer.Sound('audio\main.ogg')
+        main_sound.play(loops = -1)
 
         self.background_image = pygame.image.load("graphics/menu/start_menu.jpg").convert()
         self.background_image = pygame.transform.scale(self.background_image, (WIDTH, HEIGHT))
@@ -63,6 +68,7 @@ class Game:
             pygame.display.update()
             self.clock.tick(FPS)
     
+
     def how_to_play(self):
         while self.state == 'how_to_play':
             self.how_to_play_background_image = pygame.image.load("graphics/menu/how_to_play_bg.jpg").convert()
@@ -85,6 +91,7 @@ class Game:
             
             pygame.display.update()
             self.clock.tick(FPS)
+
 
     def run(self):
         while True:
