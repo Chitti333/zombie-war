@@ -2,7 +2,7 @@ Here’s a detailed README for your **"Zombie War"** 2D game project using Pygam
 
 ### **README.md for Zombie War**
 
-```markdown
+```markdown```
 # Zombie War
 
 **Zombie War** is an exciting 2D survival game where players must fend off waves of zombies in an apocalyptic setting. The game features unique maps designed using the Tiled map editor and immersive gameplay mechanics powered by Pygame. 
@@ -97,7 +97,8 @@ Contributions are welcome! If you have ideas for new features, improvements, or 
 4. Push to your branch (`git push origin feature-name`).
 5. Open a pull request and explain what changes you’ve made.
 
-**Contact** : 
-[Gmail(https://img.icons8.com/color/48/000000/gmail.png)](chittithallikaja@gmail.com)
-[LinkedIn(https://img.icons8.com/color/48/000000/linkedin-2.png)](https://www.linkedin.com/in/chittithalli-kaja-a097802a4/)
+##Contact
+
+[Gmail](https://img.icons8.com/color/48/000000/gmail.png)(chittithallikaja@gmail.com)
+[LinkedIn](https://img.icons8.com/color/48/000000/linkedin-2.png)(https://www.linkedin.com/in/chittithalli-kaja-a097802a4/)
 
