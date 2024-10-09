@@ -97,13 +97,15 @@ Contributions are welcome! If you have ideas for new features, improvements, or 
 4. Push to your branch (`git push origin feature-name`).
 5. Open a pull request and explain what changes you’ve made.
 
-##Contact
-
-[Gmail](https://img.icons8.com/color/48/000000/gmail.png)(chittithallikaja@gmail.com)
-[LinkedIn](https://img.icons8.com/color/48/000000/linkedin-2.png)(https://www.linkedin.com/in/chittithalli-kaja-a097802a4/)
 
 ## Connect with Me
 
+
+
 [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin-2.png)](https://www.linkedin.com/in/chittithalli-kaja-a097802a4/)
+
+
+
+
 
 [![Gmail](https://img.icons8.com/color/48/000000/gmail.png)](mailto:chittithallikaja@gmail.com)
